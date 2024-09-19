@@ -1,0 +1,37 @@
+class BankAccount {
+    private double balance;
+
+    // Constructor
+    public BankAccount(double initialBalance) {
+        this.balance = initialBalance;
+    }
+
+    // Method to check balance
+    public double checkBalance() {
+        return balance;
+    }
+
+    // Method to deposit amount
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Successfully deposited $" + amount);
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+    // Method to withdraw amount
+    public void withdraw(double amount) {
+        if (amount > 0) {
+            if (balance >= amount) {
+                balance -= amount;
+                System.out.println("Successfully withdrew $" + amount);
+            } else {
+                System.out.println("Insufficient balance to withdraw $" + amount);
+            }
+        } else {
+            System.out.println("Withdrawal amount must be positive.");
+        }
+    }
+}
